@@ -1,0 +1,54 @@
+/* styles.css */
+
+/* Style the mat-toolbar element */
+mat-toolbar {
+  background-color: #ec2db3; /* Set your desired primary background color */
+  color: #ffffff; /* Set the text color for the toolbar */
+  padding: 0 16px; /* Add some padding to the left and right of the toolbar content */
+  display: flex; /* Use flexbox to align elements */
+  align-items: center; /* Center the content vertically */
+}
+
+/* Style the span element inside mat-toolbar (MyMessages link) */
+mat-toolbar span {
+  font-size: 24px; /* Set the font size */
+  margin-right: auto; /* Push the span to the left to align with the start of the toolbar */
+}
+
+/* Style the anchor (a) element inside the span (MyMessages link) */
+mat-toolbar span a {
+  text-decoration: none; /* Remove underlines from the link */
+  color: inherit; /* Inherit the color from the parent (toolbar) */
+}
+
+/* Style the ul element inside mat-toolbar (the list container) */
+mat-toolbar ul {
+  list-style-type: none; /* Remove the default bullet points */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default paddings */
+  display: flex; /* Use flexbox to align list items horizontally */
+}
+
+/* Style the li elements inside the ul (list items) */
+mat-toolbar li {
+  margin-left: 16px; /* Add some space between list items */
+}
+
+/* Style the anchor (a) element inside the li elements (Add Posts link) */
+mat-toolbar li a {
+  text-decoration: none; /* Remove underlines from the link */
+  color: #ffffff; /* Set the text color for the links */
+}
+
+/* Change the link color when hovering */
+mat-toolbar li a:hover {
+  color: #ffcc80; /* Set the desired color when hovering */
+}
+
+ul {
+  display: flex;
+}
+
+.sidebar{
+ align-items: flex-start;
+}

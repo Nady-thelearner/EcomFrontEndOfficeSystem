@@ -1,0 +1,67 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  // The user's entered latitude and longitude
+  userLatitude: number;
+  userLongitude: number;
+
+  // Sample data from your middleware response
+  pincodeData = [
+    {
+      "Message": "Number of pincode(s) found:2",
+      "Status": "Success",
+      "PostOffice": [
+        {
+          "Name": "Gachibowli",
+          "Pincode": "500032"
+          // Add other location data here
+        },
+        {
+          "Name": "Manuu",
+          "Pincode": "500032"
+          // Add other location data here
+        }
+      ]
+    }
+  ];
+
+  // Function to validate user coordinates
+  validateCoordinates() {
+    // Iterate through the pincode data
+    for (const location of this.pincodeData[0].PostOffice) {
+      // Check if the user's coordinates fall within the boundaries of this location (pincode)
+      if (this.isPointWithinBounds(location, this.userLatitude, this.userLongitude)) {
+        console.log(`User coordinates are within the pincode ${location.Pincode}`);
+        // You can perform additional actions here if needed
+        return;
+      }
+    }
+
+    console.log('User coordinates do not match any pincode.');
+    // Handle the case where user coordinates don't match any pincode
+  }
+
+  // Function to check if a point (latitude, longitude) is within a location's boundaries
+  isPointWithinBounds(location: any, latitude: number, longitude: number): boolean {
+    // Add logic here to define the boundaries of the location based on latitude and longitude
+    // For example, you can check if latitude and longitude values are within certain ranges
+
+    // For simplicity, let's assume a square boundary with a fixed range (adjust as needed)
+    const latMin = 10;  // Minimum latitude
+    const latMax = 20;  // Maximum latitude
+    const lonMin = 30;  // Minimum longitude
+    const lonMax = 40;  // Maximum longitude
+
+    return (
+      latitude >= latMin &&
+      latitude <= latMax &&
+      longitude >= lonMin &&
+      longitude <= lonMax
+    );
+  }
+}

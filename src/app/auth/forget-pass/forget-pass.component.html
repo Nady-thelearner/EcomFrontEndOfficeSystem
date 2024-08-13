@@ -1,0 +1,29 @@
+<mat-card class="forget-card">
+  <h2>Forget password</h2>
+  <form (submit)="onSubmit()" [formGroup]="form">
+    <mat-form-field class="form-field">
+      <input type="text" matInput formControlName="email" placeholder="Email" />
+    </mat-form-field>
+
+    <div class="forgetCompBtnDiv">
+      <button
+        mat-raised-button
+        color="accent"
+        class="submit-button"
+        type="submit"
+      >
+        Submit
+      </button>
+
+      <button
+        mat-raised-button
+        color="accent"
+        class="submit-button"
+        type="button"
+        routerLink="/"
+      >
+        Back to Log In
+      </button>
+    </div>
+  </form>
+</mat-card>

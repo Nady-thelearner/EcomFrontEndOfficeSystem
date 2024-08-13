@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="dropdowns">
+    <mat-form-field class="category">
+      <mat-label>Category</mat-label>
+      <mat-select
+        [(ngModel)]="categorySelected"
+        name="food"
+        (ngModelChange)="onCategoryChange($event)"
+      >
+        <mat-option *ngFor="let item of categoryList" [value]="item">{{
+          item
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="subCategory">
+      <mat-label>Sub Category</mat-label>
+      <mat-select [(ngModel)]="subCategorySelected" name="food" (ngModelChange)="onSubCategory()">
+        <mat-option *ngFor="let item of subCategoryList" [value]="item">{{
+          item
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="product">
+    <form (submit)="onSubmit()" [formGroup]="form">
+      <mat-form-field class="product-full-width form-field">
+        <mat-label>Product</mat-label>
+        <input
+          matInput
+          placeholder="Ex. Nike"
+          name="productName"
+          formControlName="product"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Price</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Price"
+          formControlName="price"
+        />
+      </mat-form-field>
+
+
+      <mat-form-field class="form-field">
+        <mat-label>Discount</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Discount"
+          formControlName="discount"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Available Stock</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Available Stock"
+          formControlName="quantityPrd"
+        />
+      </mat-form-field>
+
+
+      <button
+        mat-stroked-button
+        type="button"
+        class="image-picker-button"
+        (click)="filePicker.click()"
+      >
+        Pick Image
+      </button>
+      <input
+        type="file"
+        #filePicker
+        class="hidden-file-input"
+        (change)="onImagePicked($event)"
+      />
+      <div class="image-preview">
+        <img
+          [src]="imagePreview"
+          alt="test"
+          *ngIf="imagePreview && form.get('image').valid"
+        />
+      </div>
+
+      <div class="addButton">
+        <button mat-fab color="accent" type="submit">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+</div>

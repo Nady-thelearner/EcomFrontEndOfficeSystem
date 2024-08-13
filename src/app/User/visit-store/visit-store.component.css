@@ -1,0 +1,45 @@
+mat-card {
+  width: 100%;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.image-preview {
+  height: 9rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+
+.image-preview {
+  margin-top: 5px;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed */
+}
+.example-card {
+  width: calc(33.33% - 16px); /* Set the width of each card, adjust margin as needed */
+  margin-bottom: 16px; /* Adjust as needed */
+  box-sizing: border-box;
+  width: 300px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.cardBtn{
+  margin-top: 2rem;
+  margin-left: 2rem;
+}

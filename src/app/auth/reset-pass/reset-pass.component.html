@@ -1,0 +1,35 @@
+<mat-card class="reset-pass">
+  <h2 *ngIf="!success">Reset Password</h2>
+  <h2 *ngIf="success">{{ message }}</h2>
+  <form [formGroup]="form" (submit)="onSubmit()" *ngIf="!success">
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        type="password"
+        name="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      class="submit-button"
+      type="submit"
+      *ngIf="!success"
+    >
+      Submit
+    </button>
+  </form>
+  <button
+    mat-raised-button
+    color="accent"
+    class="submit-button"
+    type="submit"
+    *ngIf="success"
+    routerLink="/"
+  >
+    Click to Login
+  </button>
+</mat-card>

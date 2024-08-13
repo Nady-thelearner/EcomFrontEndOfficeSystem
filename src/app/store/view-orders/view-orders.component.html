@@ -1,0 +1,82 @@
+<div class="container center">
+  <div class="addncartVal center">
+    <div *ngIf="productDetails[0]?.address && this.productPrice != 0">
+      <p>
+        <span class="spanEle">Delivery address : </span
+        >{{ productDetails[0]?.address }}
+      </p>
+    </div>
+    <p style="margin-left: 3rem" *ngIf="this.productPrice != 0">
+      <span class="spanEle"> Cart Value :</span> {{ productPrice }}
+    </p>
+  </div>
+  <div class="orderPacked" *ngIf="(orderStatus$ | async) === 'Order Packed'">
+    <p>
+      <span class="spanEle">Order Status : </span>{{ orderStatus$ | async }}
+    </p>
+  </div>
+</div>
+
+<div class="cart centerN">
+  <div class="cart-card">
+    <mat-card
+      class="center"
+      *ngFor="let key of getObjectKeys(orderNumber); let i = index"
+    >
+      <mat-card-header>
+        <mat-card-title>
+          <a class="styled-link" (click)="getOrderDet(key)"
+            >{{ key }} click to view order details.</a
+          >
+        </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <div class="cart-card center">
+    <div class="addncartVal">
+      <p *ngIf="uniqueId">
+        <span class="spanEle">Order Id : </span>{{ uniqueId }}
+      </p>
+      <button
+        mat-raised-button
+        style="margin-left: 2rem"
+        color="accent"
+        type="button"
+        *ngIf="showMarkAsPackedButton$ | async"
+        (click)="updateStatus()"
+      >
+        Mark as packed
+      </button>
+    </div>
+    <mat-card
+      class="center"
+      *ngFor="let product of productDetails; let i = index; last as isLast"
+      [style.margin-bottom.rem]="isLast ? 3 : 0"
+    >
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title
+            >Product name : {{ compProdDet[i]?.name }}
+            <span class="product-count">{{ product.quantity }} </span>
+          </mat-card-title>
+
+          <img
+            mat-card-sm-image
+            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          />
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Price : {{ compProdDet[i]?.price }}</p>
+        <p>
+          Discounted Price :
+          {{
+            +compProdDet[i]?.price -
+              +compProdDet[i]?.price * (+compProdDet[i]?.discount / 100)
+          }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

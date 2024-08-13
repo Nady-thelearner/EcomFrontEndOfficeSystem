@@ -1,0 +1,22 @@
+<mat-card class="update-card">
+  <h2>Update Password</h2>
+  <form (submit)="onSubmit()" [formGroup]="form">
+    <mat-form-field class="form-field">
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="Password"
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      class="submit-button"
+    >
+      Reset Password
+    </button>
+  </form>
+</mat-card>

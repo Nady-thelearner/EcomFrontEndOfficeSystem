@@ -1,0 +1,102 @@
+<mat-card class="example-card">
+  <mat-card-content>
+    <section class="example-section">
+      <mat-progress-bar
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+      >
+      </mat-progress-bar>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<div class="cart">
+  <h3 *ngIf="this.productPrice != 0">Cart Value : {{ productPrice }}</h3>
+  <button
+    class="proceedBtn"
+    mat-raised-button
+    color="accent"
+    *ngIf="this.productPrice != 0"
+    routerLink="/address"
+  >
+    Proceed to buy({{ this.cartItemCount }}
+    {{ this.cartItemCount > 1 ? "items" : "item" }}
+    )
+  </button>
+
+  <button
+    class="proceedBtn"
+    mat-raised-button
+    color="accent"
+    *ngIf="this.productPrice == 0"
+    routerLink="/user"
+  >
+    Back to Store
+  </button>
+  <div class="cart-card" *ngFor="let item of groupedArray; let i = index">
+    <mat-card *ngIf="item.length > 0">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title
+            >Product name : {{ productDetails[i]?.name }}
+            <span class="product-count">{{ item.length }} </span>
+          </mat-card-title>
+
+          <img
+            mat-card-sm-image
+            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          />
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Price : {{ productDetails[i]?.price }}</p>
+        <p>
+          Discounted Price :
+          {{
+            +productDetails[i]?.price -
+              +productDetails[i]?.price * (+productDetails[i]?.discount / 100)
+          }}
+        </p>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button
+          mat-mini-fab
+          color="accent"
+          (click)="onAddtoCart(i)"
+          (click)="
+            addProductPrice(
+              +productDetails[i]?.price,
+              +productDetails[i]?.discount
+            )
+          "
+        >
+          <mat-icon>plus_one</mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          color="accent"
+          (click)="onDelete(i)"
+          (click)="
+            subProductPrice(
+              +productDetails[i]?.price,
+              +productDetails[i]?.discount
+            )
+          "
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-card class="cart-card" *ngIf="this.productPrice == 0">
+    <mat-card-header>
+      <h3>
+        No Products to display , Please add Products in your cart to continue.
+      </h3>
+    </mat-card-header>
+  </mat-card>
+</div>

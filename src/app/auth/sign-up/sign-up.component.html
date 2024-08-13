@@ -1,0 +1,99 @@
+<mat-card class="signup-card">
+  <h2>Sign-up Form</h2>
+
+  <div *ngIf="showSegment1">
+    <form (submit)="onNextSegment1()" [formGroup]="form">
+      <mat-form-field class="form-field">
+        <input matInput type="text" placeholder="Name" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <input
+          matInput
+          type="text"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="accent"
+        class="submit-button"
+        type="submit"
+      >
+        Next
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="showSegment2">
+    <form (submit)="onSignup()" [formGroup]="form">
+      <button
+        mat-stroked-button
+        type="button"
+        class="image-picker-button"
+        (click)="filePicker.click()"
+      >
+        Pick Image
+      </button>
+      <input
+        type="file"
+        #filePicker
+        class="hidden-file-input"
+        (change)="onImagePicked($event)"
+      />
+      <div class="image-preview">
+        <img
+          [src]="imagePreview"
+          alt="test"
+          *ngIf="imagePreview && form.get('image').valid"
+        />
+      </div>
+
+      <mat-form-field class="form-field">
+        <input matInput type="text" placeholder="Type" formControlName="type" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <input
+          matInput
+          type="text"
+          placeholder="Mobile no."
+          formControlName="mobile"
+        />
+      </mat-form-field>
+
+      <div class="prev">
+        <button
+          mat-raised-button
+          color="accent"
+          class="submit-button"
+          type="submit"
+        >
+          Sign-up
+        </button>
+        <button
+          (click)="onPrevSegment2()"
+          mat-raised-button
+          color="accent"
+          class="submit-button"
+          type="submit"
+        >
+          Previous
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <a class="router-link" routerLink="/">Already a user, try Signing In!</a>
+</mat-card>

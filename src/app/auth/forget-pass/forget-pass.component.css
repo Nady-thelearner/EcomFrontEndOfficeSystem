@@ -1,0 +1,30 @@
+mat-card {
+  width: 100%;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+.forget-card {
+  width: 500px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  width: 40%;
+  margin-top: 15px;
+}
+
+.forgetCompBtnDiv {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,78 @@
+mat-card {
+  width: 100%;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+.signup-card {
+  width: 500px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+
+.submit-button {
+  width: 40%;
+  margin-top: 15px;
+}
+
+.image-preview {
+  height: 9rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+
+.image-picker-button {
+  margin-top: 10px;
+  display: block;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.image-preview {
+  margin-top: 10px;
+}
+
+a {
+  color: blue; /* Set the link color */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Style the anchor tag specifically for your case */
+a.router-link {
+  display: block; /* Make the link a block element */
+  text-align: center; /* Center align the text */
+  margin-top: 10px; /* Add spacing above the link */
+  color: #df67bb; /* Set a custom color */
+  font-size: 14px; /* Set font size */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+a.router-link:hover {
+  color: #f312b0; /* Change color on hover */
+}
+
+.prev {
+  display: flex;
+  justify-content: space-between; /* Distribute space between elements */
+  margin-top: 15px; /* Add margin for spacing */
+}
+
+
+
+

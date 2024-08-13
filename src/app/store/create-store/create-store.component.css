@@ -1,0 +1,104 @@
+mat-card {
+  width: 100%;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.image-preview {
+  height: 9rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+
+.image-preview {
+  margin-top: 10px;
+}
+
+.example-card {
+  width: 800px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.create-card {
+  width: 800px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  width: 40%;
+  margin-top: 15px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+/* Add top padding to .products-container */
+/* Add top padding to .products-container */
+.products-container {
+  padding-top: 20px; /* Adjust the value as needed */
+  padding-bottom: 60px;
+}
+
+/* Style the table container */
+.table-container {
+  max-width: 800px; /* Set a maximum width for the table container */
+  margin: 0 auto; /* Center the table container */
+}
+
+/* Style the table */
+.mat-elevation-z8 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px; /* Add margin between the table and the padding */
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); /* Add a border between rows */
+}
+
+.mat-header-row,
+.mat-row {
+  display: flex;
+}
+
+.mat-header-cell {
+  flex: 1;
+  font-weight: bold;
+}
+
+.mat-cell {
+  flex: 1;
+}

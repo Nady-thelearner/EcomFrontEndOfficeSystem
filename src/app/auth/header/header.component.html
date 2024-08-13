@@ -1,0 +1,45 @@
+<mat-toolbar color="pink">
+  <span *ngIf="isAuthenticated"
+    ><a ><app-sidebar> Ecom App</app-sidebar> </a>
+  </span>
+
+  <ul>
+    <li></li>
+    <div *ngIf="!isVendor">
+      <li *ngIf="isAuthenticated && cartItemCount > 0">
+        <div class="">
+          <mat-icon
+            aria-hidden="false"
+            fontIcon="add_shopping_cart"
+            routerLink="/addto-cart"
+          ></mat-icon>
+          <span class="cart-count">{{ cartItemCount }}</span>
+        </div>
+      </li>
+
+      <li *ngIf="isAuthenticated && cartItemCount == 0">
+        <div class="">
+          <mat-icon
+            aria-hidden="false"
+            fontIcon="remove_shopping_cart"
+          ></mat-icon>
+        </div>
+      </li>
+    </div>
+    <div *ngIf="isVendor">
+      <li *ngIf="isAuthenticated">
+        <button mat-raised-button routerLink="/view-orders">View Orders</button>
+      </li>
+    </div>
+
+    <li *ngIf="isAuthenticated">
+      <button mat-raised-button routerLink="/update-pass">
+        Update Password
+      </button>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <button mat-raised-button (click)="onlogout()">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>
+<!-- remove_shopping_cart -->

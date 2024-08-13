@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="containerMain">
+    <button
+      mat-fab
+      class="cardBtn"
+      type="button"
+      color="accent"
+      routerLink="/addto-cart"
+    >
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <div class="address-card" *ngIf="!productAdded">
+      <h3>Select Address</h3>
+      <mat-selection-list
+        #add
+        [multiple]="false"
+        (selectionChange)="onSelectionChange($event)"
+      >
+        <div class="" *ngFor="let address of addresss">
+          <mat-list-option [value]="address">{{ address }}</mat-list-option>
+        </div>
+      </mat-selection-list>
+
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="formVisible()"
+        *ngIf="!enterAdd"
+        class="addADdress"
+      >
+        Add Address
+      </button>
+      <div class="product" *ngIf="enterAdd">
+        <form (submit)="onSubmit()" [formGroup]="form" class="addADdress">
+          <mat-form-field class="product-full-width form-field">
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              placeholder="Ex. street"
+              name="address"
+              formControlName="address"
+            />
+          </mat-form-field>
+
+          <button
+            mat-fab
+            class="cardBtn"
+            type="submit"
+            color="accent"
+            *ngIf="enterAdd"
+          >
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <button
+    mat-raised-button
+    color="accent"
+    *ngIf="addressSelected"
+    class="continueBtn"
+    (click)="placeOrder()"
+  >
+    Place your order
+  </button>
+  <div class="address-card" *ngIf="productAdded">
+    <p>Products added successfully.</p>
+  </div>
+</div>
+

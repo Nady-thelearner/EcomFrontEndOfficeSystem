@@ -1,0 +1,69 @@
+.cart {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: space-around;
+  align-items: self-start;
+  margin-top: 10rem;
+}
+.orderPacked {
+  background-color: greenyellow;
+}
+.addncartVal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.center {
+  margin-top: 1rem;
+  min-width: 25rem;
+}
+
+.centerN {
+  margin-top: 10rem;
+}
+.cart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+}
+mat-card {
+  max-width: 40rem;
+}
+.styled-link {
+  color: #e654ba;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.styled-link:hover {
+  color: #ec2db3;
+}
+
+.product-count {
+  position: absolute;
+  top: 0px;
+  right: 8px;
+  background: linear-gradient(45deg, #ec2db3, #ecbbdd);
+  color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 10px;
+  border-radius: 50%;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.spanEle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}

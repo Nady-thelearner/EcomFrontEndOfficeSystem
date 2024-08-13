@@ -1,0 +1,49 @@
+mat-list-option.mat-list-item-selected {
+  background-color: #e28bd7;
+}
+.address-card {
+  width: 500px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+  background-color: #ffffff; /* Set your desired background color */
+  border-radius: 8px;
+  /* transition: box-shadow 0.3s; */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+mat-selection-list {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  min-width: 30rem;
+}
+
+.containerMain {
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed */
+}
+.address-card + .continueBtn {
+  margin-top: 4rem;
+}
+
+.continueBtn {
+  margin-top: 4rem;
+}
+
+.addADdress {
+  margin-top: 2rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardBtn {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
